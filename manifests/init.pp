@@ -241,7 +241,7 @@ class pam (
 ) {
 
   # Fail on unsupported platforms
-  if $facts['os']['family'] == 'RedHat' and !($facts['os']['release']['major'] in ['5','6','7']) {
+  if $facts['os']['family'] == 'RedHat' and !($facts['os']['release']['major'] in ['5','6','7','8']) {
     fail("osfamily RedHat's os.release.major is <${::facts['os']['release']['major']}> and must be 5, 6 or 7")
   } elsif $facts['os']['family'] == 'Solaris' and !($facts['kernelrelease'] in ['5.9','5.10','5.11']) {
     fail("osfamily Solaris' kernelrelease is <${facts['kernelrelease']}> and must be 5.9, 5.10 or 5.11")
